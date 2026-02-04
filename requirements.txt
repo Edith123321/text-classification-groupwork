@@ -1,11 +1,22 @@
-# Python dependencies for SMS spam classification project
+# Python dependencies for SMS spam classification with LSTM
 # Install with: pip install -r requirements.txt
 
-pandas
-numpy
-scikit-learn
-nltk
-gensim
-tensorflow
-matplotlib
-seaborn
+# Core data processing
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Machine learning and deep learning
+scikit-learn>=1.0.0
+tensorflow>=2.8.0
+keras>=2.8.0
+
+# NLP and embeddings
+nltk>=3.6.0
+gensim>=4.1.0
+
+# Visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Progress bars
+tqdm>=4.62.0
