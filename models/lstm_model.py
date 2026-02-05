@@ -41,7 +41,7 @@ class LSTMClassifier:
     - Binary output: Spam probability (0-1)
     """
     
-    def __init__(self, input_dim, lstm_units=64, dropout_rate=0.5, learning_rate=0.001):
+    def __init__(self, input_dim, lstm_units=64, dropout=0.5, dense_units=32, learning_rate=0.001):
         """
         Initialize LSTM classifier parameters.
         
@@ -62,7 +62,7 @@ class LSTMClassifier:
         - Why 64: Captures complex patterns without overfitting
         - Alternative values: 32 (simpler), 128 (more complex)
         
-        dropout_rate=0.5:
+        dropout=0.5:
         - Fraction of units to randomly drop during training
         - Critical for preventing overfitting on small datasets
         - 0.5 means 50% of neurons dropped each batch
@@ -70,6 +70,11 @@ class LSTMClassifier:
         - Why 0.5: Standard value, proven effective
         - Lower (0.3): Less regularization, may overfit
         - Higher (0.7): More regularization, may underfit
+        
+        dense_units=32:
+        - Number of neurons in dense layer before output
+        - Helps learn complex decision boundaries
+        - More units = more capacity for pattern combination
         
         learning_rate=0.001:
         - Step size for gradient descent optimization
@@ -80,7 +85,8 @@ class LSTMClassifier:
         """
         self.input_dim = input_dim
         self.lstm_units = lstm_units
-        self.dropout_rate = dropout_rate
+        self.dropout_rate = dropout
+        self.dense_units = dense_units
         self.learning_rate = learning_rate
         self.model = None
         self.history = None
@@ -136,11 +142,11 @@ class LSTMClassifier:
             Dropout(self.dropout_rate),
             
             # Dense hidden layer
-            # Why 32 units: Intermediate layer between LSTM and output
+            # Configurable units based on hyperparameter tuning
             # ReLU activation: Non-linearity allows learning complex patterns
             # Could skip this layer for simpler model
             # Helps when LSTM output is high-dimensional (128 from bidirectional 64)
-            Dense(32, activation='relu'),
+            Dense(self.dense_units, activation='relu'),
             
             # Another dropout
             # Why: Additional regularization for dense layer

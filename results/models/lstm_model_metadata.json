@@ -1,9 +1,9 @@
 {
-    "model_name": "CBOW",
-    "embedding_type": "cbow",
-    "f1_score": 0.9452054794520548,
-    "accuracy": 0.9856502242152466,
-    "precision": 0.965034965034965,
+    "model_name": "TF-IDF",
+    "embedding_type": "tfidf",
+    "f1_score": 0.9517241379310345,
+    "accuracy": 0.9517241379310345,
+    "precision": 0.9787234042553191,
     "recall": 0.9261744966442953,
-    "auc": 0.990068364667139
+    "auc": 0.9884565147915017
 }
