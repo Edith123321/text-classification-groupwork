@@ -13,7 +13,7 @@ import numpy as np
 from gensim.models import Word2Vec
 
 
-class CBOWEmbedding:
+class CBOWEmbedder:
     """
     CBOWEmbedding
 
@@ -58,7 +58,7 @@ class CBOWEmbedding:
             vector_size=self.vector_size,
             window=self.window,
             min_count=self.min_count,
-            sg=0,              # CBOW architecture
+            sg=0,           
             workers=4,
             seed=self.seed
         )
