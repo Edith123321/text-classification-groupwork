@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> e56d789e21683a2a8c0436a21db2b12ed2a6bc53
 """
 Word2Vec Skip-gram Embedding Module for SMS Spam Classification
 
