@@ -54,12 +54,17 @@ venv.bak/
 *.bin
 
 # Results and outputs
-results/figures/*.png
-results/figures/*.jpg
-results/figures/*.pdf
+/data/embeddings/tfidf_gru/tfidf_vectorizer.pkl
 results/tables/*.csv
 !results/tables/README.md
 !results/figures/README.md
+/data/embeddings/tfidf_gru/X_test.npy
+/data/embeddings/tfidf_gru/y_test.npy
+/data/embeddings/tfidf_gru/X_train.npy
+/data/embeddings/tfidf_gru/y_train.npy
+/data/embeddings/tfidf_gru/X_val.npy
+/data/embeddings/tfidf_gru/y_val.npy
+  
 
 # Logs
 *.log
