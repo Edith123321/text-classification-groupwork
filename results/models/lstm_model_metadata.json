@@ -1,9 +1,9 @@
 {
-    "model_name": "TF-IDF",
-    "embedding_type": "tfidf",
-    "f1_score": 0.9517241379310345,
-    "accuracy": 0.9517241379310345,
-    "precision": 0.9787234042553191,
-    "recall": 0.9261744966442953,
-    "auc": 0.9884565147915017
+    "model_name": "Skip-gram",
+    "embedding_type": "skipgram",
+    "f1_score": 0.9488054607508533,
+    "accuracy": 0.9865470852017937,
+    "precision": 0.9652777777777778,
+    "recall": 0.9328859060402684,
+    "auc": 0.9914162046493531
 }
