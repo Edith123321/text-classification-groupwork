@@ -1,9 +1,9 @@
 {
-    "model_name": "Skip-gram",
-    "embedding_type": "skipgram",
-    "f1_score": 0.9488054607508533,
-    "accuracy": 0.9865470852017937,
-    "precision": 0.9652777777777778,
-    "recall": 0.9328859060402684,
-    "auc": 0.9914162046493531
+    "model_name": "CBOW",
+    "embedding_type": "cbow",
+    "f1_score": 0.9419795221843004,
+    "accuracy": 0.9847533632286996,
+    "precision": 0.9583333333333334,
+    "recall": 0.9261744966442953,
+    "auc": 0.9882689288145956
 }
