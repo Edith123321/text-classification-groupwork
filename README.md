@@ -39,7 +39,7 @@ text-classification-groupwork/
 ├── notebooks/
 │   ├── LSTM_SMS_Spam_Classification.ipynb   # Complete LSTM pipeline
 │   ├── gru.ipynb                            # GRU implementation
-│   ├── rnn.ipynb                            # RNN baseline
+│   ├── rnn.ipynb                            # RNN implementation
 │   └── logistic_regression.ipynb            # Traditional ML baseline
 │
 ├── results/
@@ -174,9 +174,17 @@ Both LSTM and GRU models achieved excellent performance across all three embeddi
 | Optimized     | 98.7%    | 95.1%     | 95.1%  | 95.1%    | 0.984   | <2 min        |
 | Best (C=10)   | 98.4%    | 93.6%     | 93.6%  | 93.6%    | 0.986   | <2 min        |
 
+#### RNN Results
+| Embedding | Accuracy | Precision | Recall | F1-Score | Training Time |
+|-----------|----------|-----------|--------|----------|---------------|
+| TF-IDF    | 96.8%    | 95.2%     | 91.5%  | 93.3%    | ~12 min       |
+| Skip-gram | 97.1%    | 95.8%     | 92.3%  | 94.0%    | ~14 min       |
+| CBOW      | 97.3%    | 96.1%     | 93.1%  | 94.5%    | ~13 min       |
+
 **Best Overall**: LSTM with CBOW embeddings (98.7% accuracy, 97.2% F1-score)
 **Best Traditional ML**: Optimized Logistic Regression (98.7% accuracy, 95.1% F1-score)
 **Fastest Model**: Logistic Regression with excellent performance in under 2 minutes
+**RNN Baseline**: Vanilla RNN with CBOW (97.3% accuracy, 94.5% F1-score) - demonstrates the value of LSTM/GRU gating mechanisms
 
 ### Hyperparameter Tuning Results
 
@@ -276,6 +284,12 @@ GRU visualizations showcase model performance in `results/figures/`:
 - `gru_embedding_comparison.png`: Comprehensive comparison across all embeddings
 - `gru_training_curves.png`: Training and validation metrics over epochs
 
+### RNN Results
+RNN baseline results are available in results/figures/:
+- `eda_text_analysis.png`&`eda_overview.png`: Training and validation metrics over epochs
+- `data_comparison.png`: Performance comparison across embeddings
+- `confusion_matrices.png`: Confusion matrices for TF-IDF, Skip-gram, and CBOW
+
 ## Requirements
 
 Key dependencies:
@@ -285,6 +299,7 @@ Key dependencies:
 - pandas: Data manipulation
 - matplotlib & seaborn: Visualization
 - numpy: Numerical computing
+- gensim: Word2Vec embeddings
 
 See `requirements.txt` for complete dependency list.
 
